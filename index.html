@@ -1,56 +1,426 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#172b3a"><title>Alfred & Theresia | Wedding Gate</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172b3a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Wedding Gate">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<title>Alfred & Theresia | Wedding Gate</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <style>
-:root{--navy:#172b3a;--gold:#b58b4a;--cream:#fbf8f1;--green:#18794e;--red:#b42318;--amber:#9a6700}*{box-sizing:border-box}body{margin:0;background:#f3f5f6;color:#1c2730;font:16px system-ui,-apple-system,Segoe UI,sans-serif}.top{background:var(--navy);color:white;padding:22px 16px;text-align:center;border-bottom:4px solid var(--gold)}.top h1{font-family:Georgia,serif;font-weight:500;margin:0;font-size:27px}.top p{margin:7px 0 0;color:#e8d8b9;font-size:13px}.wrap{max-width:900px;margin:20px auto;padding:0 14px}.card{background:white;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 3px 18px #1424330c}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button,.btn{border:0;border-radius:10px;padding:12px 15px;font-weight:700;background:var(--navy);color:white;cursor:pointer}.tabs button.active{background:var(--gold);color:#1d2730}.btn.secondary{background:#e9edf0;color:#1c2730}.btn.green{background:var(--green)}.btn.red{background:var(--red)}input,select{width:100%;padding:13px;border:1px solid #cbd3d9;border-radius:10px;font:inherit;margin:6px 0 12px}label{font-weight:650;font-size:14px}.muted{color:#66737d;font-size:13px}.hidden{display:none!important}.result{padding:18px;border-radius:12px;text-align:center;font-weight:800;margin-top:14px}.valid{background:#e8f5ed;color:var(--green)}.invalid{background:#fff0ef;color:var(--red)}.warning{background:#fff6df;color:var(--amber)}.guest{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e1e6e9;padding:12px;border-radius:10px;margin:8px 0}.guest button{white-space:nowrap}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.invite{max-width:430px;margin:15px auto;padding:28px 22px;text-align:center;background:var(--cream);border:1px solid #d8c29d;outline:5px solid #f1e8d8;font-family:Georgia,serif;color:#273744}.invite .names{font-size:27px;color:#8c6835;margin:18px 0}.invite .small{font:12px system-ui;letter-spacing:2px}.invite #qrcode{display:flex;justify-content:center;margin:18px}.invite input{font:15px system-ui}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:9px;border-bottom:1px solid #e6eaed}.status{font-size:12px;font-weight:700}.foot{text-align:center;color:#68747d;font-size:12px;padding:20px}@media print{body *{visibility:hidden!important}.invite,.invite *{visibility:visible!important}.invite{position:absolute;left:0;top:0;width:100%;max-width:none;margin:0;outline:0;box-shadow:none}}@media(max-width:560px){.row{grid-template-columns:1fr}.guest{align-items:flex-start;flex-direction:column}.top h1{font-size:23px}}
-</style></head><body>
-<header class="top"><h1>Alfred F. Mhina & Theresia P. Marcel</h1><p>WEDDING CELEBRATION · 5 DECEMBER 2026 · NGOME HALL, AFRICA SANA, MWENGE</p></header>
+:root{--navy:#172b3a;--gold:#b58b4a;--cream:#fbf8f1;--green:#18794e;--red:#b42318;--amber:#9a6700}
+*{box-sizing:border-box}
+body{margin:0;background:#f3f5f6;color:#1c2730;font:16px system-ui,-apple-system,Segoe UI,sans-serif}
+.top{background:var(--navy);color:white;padding:22px 16px;text-align:center;border-bottom:4px solid var(--gold)}
+.top h1{font-family:Georgia,serif;font-weight:500;margin:0;font-size:27px}
+.top p{margin:7px 0 0;color:#e8d8b9;font-size:13px}
+.wrap{max-width:900px;margin:20px auto;padding:0 14px}
+.card{background:white;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 3px 18px #1424330c}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button,.btn{border:0;border-radius:10px;padding:12px 15px;font-weight:700;background:var(--navy);color:white;cursor:pointer}
+.tabs button.active{background:var(--gold);color:#1d2730}
+.btn.secondary{background:#e9edf0;color:#1c2730}
+.btn.green{background:var(--green)}
+.btn.red{background:var(--red)}
+input,select{width:100%;padding:13px;border:1px solid #cbd3d9;border-radius:10px;font:inherit;margin:6px 0 12px}
+label{font-weight:650;font-size:14px}
+.muted{color:#66737d;font-size:13px}
+.hidden{display:none!important}
+.result{padding:18px;border-radius:12px;text-align:center;font-weight:800;margin-top:14px}
+.valid{background:#e8f5ed;color:var(--green)}
+.invalid{background:#fff0ef;color:var(--red)}
+.warning{background:#fff6df;color:var(--amber)}
+.guest{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e1e6e9;padding:12px;border-radius:10px;margin:8px 0}
+.guest button{white-space:nowrap}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.invite{max-width:430px;margin:15px auto;padding:28px 22px;text-align:center;background:var(--cream);border:1px solid #d8c29d;outline:5px solid #f1e8d8;font-family:Georgia,serif;color:#273744}
+.invite .names{font-size:27px;color:#8c6835;margin:18px 0}
+.invite .small{font:12px system-ui;letter-spacing:2px}
+.invite #qrcode{display:flex;justify-content:center;margin:18px}
+.invite input{font:15px system-ui}
+.tablewrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{text-align:left;padding:9px;border-bottom:1px solid #e6eaed}
+.status{font-size:12px;font-weight:700}
+.foot{text-align:center;color:#68747d;font-size:12px;padding:20px}
+@media print{
+body *{visibility:hidden!important}
+.invite,.invite *{visibility:visible!important}
+.invite{position:absolute;left:0;top:0;width:100%;max-width:none;margin:0;outline:0;box-shadow:none}
+}
+@media(max-width:560px){
+.row{grid-template-columns:1fr}
+.guest{align-items:flex-start;flex-direction:column}
+.top h1{font-size:23px}
+}
+</style>
+</head>
+
+<body>
+<header class="top">
+<h1>Alfred F. Mhina & Theresia P. Marcel</h1>
+<p>WEDDING CELEBRATION · 5 DECEMBER 2026 · NGOME HALL, AFRICA SANA, MWENGE</p>
+</header>
+
 <main class="wrap">
-<section id="setup" class="card hidden"><h2>Connect the wedding system</h2><p class="muted">Connection is configured in this application.</p></section>
-<section id="auth" class="card"><h2>Staff sign in</h2><label>Email</label><input id="email" type="email" autocomplete="username"><label>Password</label><input id="password" type="password" autocomplete="current-password"><button class="btn" onclick="signIn()">Sign in</button><p id="authMsg" class="muted">Enter your authorised staff email and password.</p></section>
+<section id="setup" class="card hidden">
+<h2>Connect the wedding system</h2>
+<p class="muted">Connection is configured in this application.</p>
+</section>
+
+<section id="auth" class="card">
+<h2>Staff sign in</h2>
+<label>Email</label>
+<input id="email" type="email" autocomplete="username">
+<label>Password</label>
+<input id="password" type="password" autocomplete="current-password">
+<button class="btn" onclick="signIn()">Sign in</button>
+<p id="authMsg" class="muted">Enter your authorised staff email and password.</p>
+</section>
+
 <section id="app" class="hidden">
-<div class="card"><div class="tabs"><button id="tabGate" class="active" onclick="showTab('gate')">Gate scanner</button><button id="tabAdmin" onclick="showTab('admin')">Guest administration</button><button class="secondary" onclick="signOut()">Sign out</button></div><p id="staffInfo" class="muted"></p></div>
-<section id="gatePanel" class="card"><h2>Gate admission</h2><p class="muted">Scan the common physical-card QR or an electronic invitation QR. Public/home scans never mark a guest as admitted. Only signed-in gate staff can record entry.</p><button class="btn" onclick="startScan()">Open camera scanner</button> <button class="btn secondary" onclick="stopScan()">Stop camera</button><div id="reader" style="max-width:420px;margin:14px auto"></div><div id="scanInfo" class="muted"></div><div id="guestSearchArea" class="hidden"><label>Find the name written on the physical card</label><input id="guestSearch" placeholder="Start typing guest name…" oninput="searchGuests()"><div id="guestResults"></div></div><div id="gateResult"></div></section>
-<section id="adminPanel" class="card hidden"><h2>Guest register</h2><p class="muted">Create one invitation per single guest or couple. Couple partners have separate admission records and may arrive separately.</p><div class="row"><div><label>Invitation type</label><select id="inviteType"><option value="single">Single</option><option value="couple">Couple</option></select></div><div><label>Delivery type</label><select id="deliveryType"><option value="physical">Physical (shared QR)</option><option value="electronic">Electronic (personalised QR)</option></select></div></div><label>Guest 1 full name</label><input id="guest1" placeholder="First guest full name"><div id="guest2wrap" class="hidden"><label>Guest 2 full name</label><input id="guest2" placeholder="Second guest full name"></div><button class="btn" onclick="createInvitation()">Save invitation</button><div id="createMsg" class="muted"></div><hr><h3>Import guest list from CSV</h3><p class="muted">Columns: type, delivery, guest1, guest2. Example: couple,physical,Peter Simon,Mary Simon</p><input type="file" id="csvFile" accept=".csv,text/csv"><button class="btn secondary" onclick="importCsv()">Import CSV</button><div id="importMsg" class="muted"></div><hr><h3>Registered invitees</h3><button class="btn secondary" onclick="loadGuests()">Refresh list</button> <button class="btn secondary" onclick="downloadCsv()">Download attendance CSV</button><div id="guestTable" class="tablewrap"></div><hr><h3>Physical card QR</h3><p class="muted">Generate the single common QR code for bulk printing. Leave the guest-name line blank for handwriting.</p><button class="btn secondary" onclick="previewPhysical()">Generate common physical-card QR</button><div id="physicalCard"></div><hr><h3>Electronic invitation preview</h3><p class="muted">Select an electronic invitation below to generate its personalised card for saving or printing.</p><select id="electronicSelect"><option value="">Select electronic invitation</option></select><button class="btn secondary" onclick="previewElectronic()">Create card preview</button><div id="electronicCard"></div></section>
-</section><div class="foot">Private wedding admission system · Guest data accessible only to authorised staff</div></main>
+<div class="card">
+<div class="tabs">
+<button id="tabGate" class="active" onclick="showTab('gate')">Gate scanner</button>
+<button id="tabAdmin" onclick="showTab('admin')">Guest administration</button>
+<button class="secondary" onclick="signOut()">Sign out</button>
+</div>
+<p id="staffInfo" class="muted"></p>
+</div>
+
+<section id="gatePanel" class="card">
+<h2>Gate admission</h2>
+<p class="muted">Scan the common physical-card QR or an electronic invitation QR. Public/home scans never mark a guest as admitted. Only signed-in gate staff can record entry.</p>
+<button class="btn" onclick="startScan()">Open camera scanner</button>
+<button class="btn secondary" onclick="stopScan()">Stop camera</button>
+<div id="reader" style="max-width:420px;margin:14px auto"></div>
+<div id="scanInfo" class="muted"></div>
+<div id="guestSearchArea" class="hidden">
+<label>Find the name written on the physical card</label>
+<input id="guestSearch" placeholder="Start typing guest name…" oninput="searchGuests()">
+<div id="guestResults"></div>
+</div>
+<div id="gateResult"></div>
+</section>
+
+<section id="adminPanel" class="card hidden">
+<h2>Guest register</h2>
+<p class="muted">Create one invitation per single guest or couple. Couple partners have separate admission records and may arrive separately.</p>
+
+<div class="row">
+<div>
+<label>Invitation type</label>
+<select id="inviteType">
+<option value="single">Single</option>
+<option value="couple">Couple</option>
+</select>
+</div>
+<div>
+<label>Delivery type</label>
+<select id="deliveryType">
+<option value="physical">Physical (shared QR)</option>
+<option value="electronic">Electronic (personalised QR)</option>
+</select>
+</div>
+</div>
+
+<label>Guest 1 full name</label>
+<input id="guest1" placeholder="First guest full name">
+<div id="guest2wrap" class="hidden">
+<label>Guest 2 full name</label>
+<input id="guest2" placeholder="Second guest full name">
+</div>
+<button class="btn" onclick="createInvitation()">Save invitation</button>
+<div id="createMsg" class="muted"></div>
+
+<hr>
+<h3>Import guest list from CSV</h3>
+<p class="muted">Columns: type, delivery, guest1, guest2. Example: couple,physical,Peter Simon,Mary Simon</p>
+<input type="file" id="csvFile" accept=".csv,text/csv">
+<button class="btn secondary" onclick="importCsv()">Import CSV</button>
+<div id="importMsg" class="muted"></div>
+
+<hr>
+<h3>Registered invitees</h3>
+<button class="btn secondary" onclick="loadGuests()">Refresh list</button>
+<button class="btn secondary" onclick="downloadCsv()">Download attendance CSV</button>
+<div id="guestTable" class="tablewrap"></div>
+
+<hr>
+<h3>Physical card QR</h3>
+<p class="muted">Generate the single common QR code for bulk printing. Leave the guest-name line blank for handwriting.</p>
+<button class="btn secondary" onclick="previewPhysical()">Generate common physical-card QR</button>
+<div id="physicalCard"></div>
+
+<hr>
+<h3>Electronic invitation preview</h3>
+<p class="muted">Select an electronic invitation below to generate its personalised card for saving or printing.</p>
+<select id="electronicSelect">
+<option value="">Select electronic invitation</option>
+</select>
+<button class="btn secondary" onclick="previewElectronic()">Create card preview</button>
+<div id="electronicCard"></div>
+</section>
+</section>
+
+<div class="foot">Private wedding admission system · Guest data accessible only to authorised staff</div>
+</main>
+
 <script>
 // Browser-safe Supabase configuration. This publishable key is intended for client-side use.
 // Database access must still be protected by Supabase Row Level Security policies.
 const SUPABASE_URL = 'https://divzvuyndcywyynhjfcb.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_JPa-hOb4A5wewHL7ybYXLw_NjWCV0bM';
+
 let sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 let staff=null,role=null,eventRow=null,scanner=null,currentMode='physical',electronicInvite=null,guestCache=[];
-const $=id=>document.getElementById(id);function say(id,msg){$(id).textContent=msg}function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-async function signIn(){const {data,error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error){say('authMsg',error.message);return}await initApp()}
-async function initApp(){const {data:{user}}=await sb.auth.getUser();if(!user){$('auth').classList.remove('hidden');return}staff=user;const p=await sb.from('staff_profiles').select('full_name,role').eq('user_id',user.id).single();if(p.error){$('auth').classList.remove('hidden');say('authMsg','Staff profile not configured. Ask the administrator to assign your role.');return}role=p.data.role;const e=await sb.from('wedding_events').select('*').limit(1).single();if(e.error){$('auth').classList.remove('hidden');say('authMsg',e.error.message);return}eventRow=e.data;$('auth').classList.add('hidden');$('app').classList.remove('hidden');$('staffInfo').textContent=`Signed in: ${p.data.full_name} · ${role}`;$('tabAdmin').classList.toggle('hidden',role!=='admin');if(role!=='admin')$('tabAdmin').disabled=true;loadGuests();const params=new URLSearchParams(location.search);const token=params.get('invite');if(token){await processElectronicToken(token)}}
-async function signOut(){await stopScan();await sb.auth.signOut();$('app').classList.add('hidden');$('auth').classList.remove('hidden');$('password').value='';say('authMsg','You have signed out. Enter your staff credentials to continue.')}
-function showTab(which){$('gatePanel').classList.toggle('hidden',which!=='gate');$('adminPanel').classList.toggle('hidden',which!=='admin');$('tabGate').classList.toggle('active',which==='gate');$('tabAdmin').classList.toggle('active',which==='admin')}
+
+const $=id=>document.getElementById(id);
+function say(id,msg){$(id).textContent=msg}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+async function signIn(){
+const {data,error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});
+if(error){say('authMsg',error.message);return}
+await initApp()
+}
+
+async function initApp(){
+const {data:{user}}=await sb.auth.getUser();
+if(!user){$('auth').classList.remove('hidden');return}
+staff=user;
+const p=await sb.from('staff_profiles').select('full_name,role').eq('user_id',user.id).single();
+if(p.error){$('auth').classList.remove('hidden');say('authMsg','Staff profile not configured. Ask the administrator to assign your role.');return}
+role=p.data.role;
+const e=await sb.from('wedding_events').select('*').limit(1).single();
+if(e.error){$('auth').classList.remove('hidden');say('authMsg',e.error.message);return}
+eventRow=e.data;
+$('auth').classList.add('hidden');
+$('app').classList.remove('hidden');
+$('staffInfo').textContent=`Signed in: ${p.data.full_name} · ${role}`;
+$('tabAdmin').classList.toggle('hidden',role!=='admin');
+if(role!=='admin')$('tabAdmin').disabled=true;
+loadGuests();
+const params=new URLSearchParams(location.search);
+const token=params.get('invite');
+if(token){await processElectronicToken(token)}
+}
+
+async function signOut(){
+await stopScan();
+await sb.auth.signOut();
+$('app').classList.add('hidden');
+$('auth').classList.remove('hidden');
+$('password').value='';
+say('authMsg','You have signed out. Enter your staff credentials to continue.')
+}
+
+function showTab(which){
+$('gatePanel').classList.toggle('hidden',which!=='gate');
+$('adminPanel').classList.toggle('hidden',which!=='admin');
+$('tabGate').classList.toggle('active',which==='gate');
+$('tabAdmin').classList.toggle('active',which==='admin')
+}
+
 $('inviteType').addEventListener('change',()=> $('guest2wrap').classList.toggle('hidden',$('inviteType').value!=='couple'));
-async function startScan(){if(scanner)return;scanner=new Html5Qrcode('reader');try{await scanner.start({facingMode:'environment'},{fps:12,qrbox:{width:240,height:240}},async decoded=>{await stopScan();await handleQr(decoded)},()=>{});say('scanInfo','Camera active. Point it at the invitation QR code.')}catch(e){scanner=null;say('scanInfo','Camera could not start. Check browser camera permission and use HTTPS.') }}
-async function stopScan(){if(scanner){try{if(scanner.isScanning)await scanner.stop();await scanner.clear()}catch(e){}scanner=null}}
-async function handleQr(raw){$('gateResult').innerHTML='';$('guestSearchArea').classList.add('hidden');let token=raw;try{const u=new URL(raw);token=u.searchParams.get('invite')||u.searchParams.get('physical')||u.searchParams.get('event')||raw}catch(e){}if(token===eventRow.physical_qr_code||token===eventRow.event_slug){currentMode='physical';$('guestSearchArea').classList.remove('hidden');say('scanInfo','Wedding invitation QR recognised. Search for the name written on the physical card.');$('guestSearch').focus();return}await processElectronicToken(token)}
-async function processElectronicToken(token){const {data:inv,error}=await sb.from('invitations').select('id,invitation_code,delivery_type,invitees(id,full_name,admissions(id,admitted_at))').eq('invitation_code',token).eq('delivery_type','electronic').maybeSingle();if(error||!inv){showResult('invalid','INVALID INVITATION','This electronic invitation is not registered.');return}currentMode='electronic';$('guestSearchArea').classList.add('hidden');$('scanInfo').textContent='Electronic invitation verified. Select the arriving person.';renderInviteeButtons(inv.invitees)}
-function renderInviteeButtons(list){$('gateResult').innerHTML='<h3>Registered guest(s)</h3>'+list.map(g=>`<div class="guest"><div><strong>${escapeHtml(g.full_name)}</strong><div class="muted">${g.admissions?.length?'Already admitted':'Not yet admitted'}</div></div><button class="btn ${g.admissions?.length?'secondary':'green'}" ${g.admissions?.length?'disabled':''} onclick="admit('${g.id}')">${g.admissions?.length?'Already admitted':'Admit'}</button></div>`).join('')}
-async function searchGuests(){const q=$('guestSearch').value.trim().toLowerCase();if(q.length<2){$('guestResults').innerHTML='';return}const {data,error}=await sb.from('invitees').select('id,full_name, invitations!inner(invitation_code,delivery_type,event_id), admissions(id,admitted_at)').eq('invitations.event_id',eventRow.id).ilike('full_name',`%${q}%`).limit(15);if(error){$('guestResults').textContent=error.message;return}guestCache=data||[];$('guestResults').innerHTML=guestCache.map(g=>`<div class="guest"><div><strong>${escapeHtml(g.full_name)}</strong><div class="muted">${g.admissions?.length?'Already admitted':'Not yet admitted'}</div></div><button class="btn ${g.admissions?.length?'secondary':'green'}" ${g.admissions?.length?'disabled':''} onclick="admit('${g.id}')">${g.admissions?.length?'Already admitted':'Admit'}</button></div>`).join('')||'<p class="muted">No matching registered guest.</p>'}
-async function admit(id){const {data,error}=await sb.rpc('admit_guest',{p_invitee_id:id,p_device_label:navigator.userAgent.slice(0,90)});if(error){showResult('invalid','NOT RECORDED',error.message);return}if(data.status==='admitted'){showResult('valid','ADMITTED',`${data.guest_name} · ${new Date(data.admitted_at).toLocaleTimeString()}`);if(currentMode==='physical')searchGuests();else{const b=await sb.from('invitees').select('id,full_name,admissions(id,admitted_at)').eq('id',id).single();if(b.data)renderInviteeButtons([b.data])}}else if(data.status==='already_admitted'){showResult('warning','ALREADY ADMITTED',`${data.guest_name} was previously admitted.`)}else showResult('invalid','INVALID',data.message||'Admission not authorised')}
-function showResult(type,title,detail){$('gateResult').innerHTML=`<div class="result ${type}"><div style="font-size:25px">${title}</div><div style="font-size:14px;font-weight:500;margin-top:6px">${escapeHtml(detail)}</div></div>`}
-async function createInvitation(){if(role!=='admin')return;const type=$('inviteType').value,delivery=$('deliveryType').value,n1=$('guest1').value.trim(),n2=$('guest2').value.trim();if(!n1||(type==='couple'&&!n2)){say('createMsg','Enter the required guest name(s).');return}const code=crypto.randomUUID();const ins=await sb.from('invitations').insert({event_id:eventRow.id,invitation_code:code,invitation_type:type,delivery_type:delivery}).select().single();if(ins.error){say('createMsg',ins.error.message);return}const names=[n1,...(type==='couple'?[n2]:[])].map(full_name=>({invitation_id:ins.data.id,full_name}));const guests=await sb.from('invitees').insert(names);if(guests.error){await sb.from('invitations').delete().eq('id',ins.data.id);say('createMsg',guests.error.message);return}say('createMsg',`Saved ${n1}${n2?' & '+n2:''}. Invitation code: ${code}`);$('guest1').value='';$('guest2').value='';await loadGuests()}
-async function loadGuests(){if(role!=='admin')return;const {data,error}=await sb.from('invitees').select('id,full_name,created_at, invitations!inner(invitation_code,invitation_type,delivery_type,event_id), admissions(admitted_at)').eq('invitations.event_id',eventRow.id).order('created_at',{ascending:true});if(error){$('guestTable').textContent=error.message;return}guestCache=data||[];$('guestTable').innerHTML='<table><thead><tr><th>Guest</th><th>Type</th><th>Format</th><th>Admission</th></tr></thead><tbody>'+guestCache.map(g=>`<tr><td>${escapeHtml(g.full_name)}</td><td>${g.invitations.invitation_type}</td><td>${g.invitations.delivery_type}</td><td class="status">${g.admissions?.length?'ADMITTED':'PENDING'}</td></tr>`).join('')+'</tbody></table>';const {data:ivs}=await sb.from('invitations').select('id,invitation_code,invitation_type,invitees(full_name)').eq('event_id',eventRow.id).eq('delivery_type','electronic');$('electronicSelect').innerHTML='<option value="">Select electronic invitation</option>'+(ivs||[]).map(i=>`<option value="${i.id}">${escapeHtml(i.invitees.map(x=>x.full_name).join(' & '))}</option>`).join('')}
-async function importCsv(){if(role!=='admin')return;const f=$('csvFile').files[0];if(!f){say('importMsg','Choose a CSV file first.');return}const lines=(await f.text()).split(/\r?\n/).filter(x=>x.trim());let count=0;for(let i=1;i<lines.length;i++){const cols=lines[i].split(',').map(x=>x.trim().replace(/^"|"$/g,''));if(cols.length<3)continue;const [type,delivery,n1,n2]=cols;if(!['single','couple'].includes(type)||!['physical','electronic'].includes(delivery)||!n1||(type==='couple'&&!n2))continue;const code=crypto.randomUUID();const ins=await sb.from('invitations').insert({event_id:eventRow.id,invitation_code:code,invitation_type:type,delivery_type:delivery}).select().single();if(ins.error)continue;const arr=[n1,...(type==='couple'?[n2]:[])].map(full_name=>({invitation_id:ins.data.id,full_name}));const g=await sb.from('invitees').insert(arr);if(g.error)await sb.from('invitations').delete().eq('id',ins.data.id);else count++}say('importMsg',`Imported ${count} invitation(s).`);loadGuests()}
-function downloadCsv(){if(!guestCache.length){say('importMsg','Refresh the guest list first.');return}const rows=[['Guest name','Invitation type','Delivery type','Admission status'],...guestCache.map(g=>[g.full_name,g.invitations.invitation_type,g.invitations.delivery_type,g.admissions?.length?'Admitted':'Pending'])];const csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='wedding-attendance.csv';a.click();URL.revokeObjectURL(a.href)}
-function previewPhysical(){const url=location.origin+location.pathname+'?physical='+encodeURIComponent(eventRow.physical_qr_code);$('physicalCard').innerHTML=`<div class="invite"><div class="small">TOGETHER WITH THEIR FAMILIES</div><div style="font-size:13px;margin-top:20px">JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF</div><div class="names">Alfred F. Mhina<br>&<br>Theresia P. Marcel</div><div style="font:15px system-ui;margin:18px 0;border-bottom:1px solid #9b865f;padding:10px">Guest name(s): __________________</div><div style="font-size:17px;margin:18px">5 DECEMBER 2026</div><div style="font:14px system-ui">Ngome Hall<br>Africa Sana, Mwenge<br>Dar es Salaam</div><div id="physicalQr" style="display:flex;justify-content:center;margin:18px"></div><div class="small">WEDDING INVITATION</div></div><div style="text-align:center"><button class="btn" onclick="window.print()">Print common card</button></div>`;new QRCode($('physicalQr'),{text:url,width:150,height:150});}
-async function previewElectronic(){const id=$('electronicSelect').value;if(!id)return;const {data:inv}=await sb.from('invitations').select('invitation_code,invitees(full_name)').eq('id',id).single();if(!inv)return;const url=location.origin+location.pathname+'?invite='+encodeURIComponent(inv.invitation_code);const names=inv.invitees.map(x=>x.full_name).join(' & ');$('electronicCard').innerHTML=`<div class="invite"><div class="small">TOGETHER WITH THEIR FAMILIES</div><div style="font-size:13px;margin-top:20px">JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF</div><div class="names">Alfred F. Mhina<br>&<br>Theresia P. Marcel</div><div style="font:16px system-ui;font-weight:700">${escapeHtml(names)}</div><div style="font-size:17px;margin:18px">5 DECEMBER 2026</div><div style="font:14px system-ui">Ngome Hall<br>Africa Sana, Mwenge<br>Dar es Salaam</div><div id="electronicQr" ></div><div class="small">YOUR INVITATION · PLEASE PRESENT AT THE ENTRANCE</div></div><div style="text-align:center"><button class="btn" onclick="window.print()">Print / Save card</button></div>`;new QRCode($('electronicQr'),{text:url,width:150,height:150});}
+
+async function startScan(){
+if(scanner)return;
+scanner=new Html5Qrcode('reader');
+try{
+await scanner.start({facingMode:'environment'},{fps:12,qrbox:{width:240,height:240}},async decoded=>{
+await stopScan();
+await handleQr(decoded)
+},()=>{});
+say('scanInfo','Camera active. Point it at the invitation QR code.')
+}catch(e){
+scanner=null;
+say('scanInfo','Camera could not start. Check browser camera permission and use HTTPS.')
+}
+}
+
+async function stopScan(){
+if(scanner){
+try{
+if(scanner.isScanning)await scanner.stop();
+await scanner.clear()
+}catch(e){}
+scanner=null
+}
+}
+
+async function handleQr(raw){
+$('gateResult').innerHTML='';
+$('guestSearchArea').classList.add('hidden');
+let token=raw;
+try{
+const u=new URL(raw);
+token=u.searchParams.get('invite')||u.searchParams.get('physical')||u.searchParams.get('event')||raw
+}catch(e){}
+if(token===eventRow.physical_qr_code||token===eventRow.event_slug){
+currentMode='physical';
+$('guestSearchArea').classList.remove('hidden');
+say('scanInfo','Wedding invitation QR recognised. Search for the name written on the physical card.');
+$('guestSearch').focus();
+return
+}
+await processElectronicToken(token)
+}
+
+async function processElectronicToken(token){
+const {data:inv,error}=await sb.from('invitations').select('id,invitation_code,delivery_type,invitees(id,full_name,admissions(id,admitted_at))').eq('invitation_code',token).eq('delivery_type','electronic').maybeSingle();
+if(error||!inv){
+showResult('invalid','INVALID INVITATION','This electronic invitation is not registered.');
+return
+}
+currentMode='electronic';
+$('guestSearchArea').classList.add('hidden');
+$('scanInfo').textContent='Electronic invitation verified. Select the arriving person.';
+renderInviteeButtons(inv.invitees)
+}
+
+function renderInviteeButtons(list){
+$('gateResult').innerHTML='<h3>Registered guest(s)</h3>'+list.map(g=>`<div class="guest"><div><strong>${escapeHtml(g.full_name)}</strong><div class="muted">${g.admissions?.length?'Already admitted':'Not yet admitted'}</div></div><button class="btn ${g.admissions?.length?'secondary':'green'}" ${g.admissions?.length?'disabled':''} onclick="admit('${g.id}')">${g.admissions?.length?'Already admitted':'Admit'}</button></div>`).join('')
+}
+
+async function searchGuests(){
+const q=$('guestSearch').value.trim().toLowerCase();
+if(q.length<2){$('guestResults').innerHTML='';return}
+const {data,error}=await sb.from('invitees').select('id,full_name, invitations!inner(invitation_code,delivery_type,event_id), admissions(id,admitted_at)').eq('invitations.event_id',eventRow.id).ilike('full_name',`%${q}%`).limit(15);
+if(error){$('guestResults').textContent=error.message;return}
+guestCache=data||[];
+$('guestResults').innerHTML=guestCache.map(g=>`<div class="guest"><div><strong>${escapeHtml(g.full_name)}</strong><div class="muted">${g.admissions?.length?'Already admitted':'Not yet admitted'}</div></div><button class="btn ${g.admissions?.length?'secondary':'green'}" ${g.admissions?.length?'disabled':''} onclick="admit('${g.id}')">${g.admissions?.length?'Already admitted':'Admit'}</button></div>`).join('')||'<p class="muted">No matching registered guest.</p>'
+}
+
+async function admit(id){
+const {data,error}=await sb.rpc('admit_guest',{p_invitee_id:id,p_device_label:navigator.userAgent.slice(0,90)});
+if(error){showResult('invalid','NOT RECORDED',error.message);return}
+if(data.status==='admitted'){
+showResult('valid','ADMITTED',`${data.guest_name} · ${new Date(data.admitted_at).toLocaleTimeString()}`);
+if(currentMode==='physical')searchGuests();
+else{
+const b=await sb.from('invitees').select('id,full_name,admissions(id,admitted_at)').eq('id',id).single();
+if(b.data)renderInviteeButtons([b.data])
+}
+}else if(data.status==='already_admitted'){
+showResult('warning','ALREADY ADMITTED',`${data.guest_name} was previously admitted.`)
+}else showResult('invalid','INVALID',data.message||'Admission not authorised')
+}
+
+function showResult(type,title,detail){
+$('gateResult').innerHTML=`<div class="result ${type}"><div style="font-size:25px">${title}</div><div style="font-size:14px;font-weight:500;margin-top:6px">${escapeHtml(detail)}</div></div>`
+}
+
+async function createInvitation(){
+if(role!=='admin')return;
+const type=$('inviteType').value,delivery=$('deliveryType').value,n1=$('guest1').value.trim(),n2=$('guest2').value.trim();
+if(!n1||(type==='couple'&&!n2)){say('createMsg','Enter the required guest name(s).');return}
+const code=crypto.randomUUID();
+const ins=await sb.from('invitations').insert({event_id:eventRow.id,invitation_code:code,invitation_type:type,delivery_type:delivery}).select().single();
+if(ins.error){say('createMsg',ins.error.message);return}
+const names=[n1,...(type==='couple'?[n2]:[])].map(full_name=>({invitation_id:ins.data.id,full_name}));
+const guests=await sb.from('invitees').insert(names);
+if(guests.error){
+await sb.from('invitations').delete().eq('id',ins.data.id);
+say('createMsg',guests.error.message);
+return
+}
+say('createMsg',`Saved ${n1}${n2?' & '+n2:''}. Invitation code: ${code}`);
+$('guest1').value='';
+$('guest2').value='';
+await loadGuests()
+}
+
+async function loadGuests(){
+if(role!=='admin')return;
+const {data,error}=await sb.from('invitees').select('id,full_name,created_at, invitations!inner(invitation_code,invitation_type,delivery_type,event_id), admissions(admitted_at)').eq('invitations.event_id',eventRow.id).order('created_at',{ascending:true});
+if(error){$('guestTable').textContent=error.message;return}
+guestCache=data||[];
+$('guestTable').innerHTML='<table><thead><tr><th>Guest</th><th>Type</th><th>Format</th><th>Admission</th></tr></thead><tbody>'+guestCache.map(g=>`<tr><td>${escapeHtml(g.full_name)}</td><td>${g.invitations.invitation_type}</td><td>${g.invitations.delivery_type}</td><td class="status">${g.admissions?.length?'ADMITTED':'PENDING'}</td></tr>`).join('')+'</tbody></table>';
+const {data:ivs}=await sb.from('invitations').select('id,invitation_code,invitation_type,invitees(full_name)').eq('event_id',eventRow.id).eq('delivery_type','electronic');
+$('electronicSelect').innerHTML='<option value="">Select electronic invitation</option>'+(ivs||[]).map(i=>`<option value="${i.id}">${escapeHtml(i.invitees.map(x=>x.full_name).join(' & '))}</option>`).join('')
+}
+
+async function importCsv(){
+if(role!=='admin')return;
+const f=$('csvFile').files[0];
+if(!f){say('importMsg','Choose a CSV file first.');return}
+const lines=(await f.text()).split(/\r?\n/).filter(x=>x.trim());
+let count=0;
+for(let i=1;i<lines.length;i++){
+const cols=lines[i].split(',').map(x=>x.trim().replace(/^"|"$/g,''));
+if(cols.length<3)continue;
+const [type,delivery,n1,n2]=cols;
+if(!['single','couple'].includes(type)||!['physical','electronic'].includes(delivery)||!n1||(type==='couple'&&!n2))continue;
+const code=crypto.randomUUID();
+const ins=await sb.from('invitations').insert({event_id:eventRow.id,invitation_code:code,invitation_type:type,delivery_type:delivery}).select().single();
+if(ins.error)continue;
+const arr=[n1,...(type==='couple'?[n2]:[])].map(full_name=>({invitation_id:ins.data.id,full_name}));
+const g=await sb.from('invitees').insert(arr);
+if(g.error)await sb.from('invitations').delete().eq('id',ins.data.id);
+else count++
+}
+say('importMsg',`Imported ${count} invitation(s).`);
+loadGuests()
+}
+
+function downloadCsv(){
+if(!guestCache.length){say('importMsg','Refresh the guest list first.');return}
+const rows=[['Guest name','Invitation type','Delivery type','Admission status'],...guestCache.map(g=>[g.full_name,g.invitations.invitation_type,g.invitations.delivery_type,g.admissions?.length?'Admitted':'Pending'])];
+const csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n');
+const a=document.createElement('a');
+a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+a.download='wedding-attendance.csv';
+a.click();
+URL.revokeObjectURL(a.href)
+}
+
+function previewPhysical(){
+const url=location.origin+location.pathname+'?physical='+encodeURIComponent(eventRow.physical_qr_code);
+$('physicalCard').innerHTML=`<div class="invite"><div class="small">TOGETHER WITH THEIR FAMILIES</div><div style="font-size:13px;margin-top:20px">JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF</div><div class="names">Alfred F. Mhina<br>&<br>Theresia P. Marcel</div><div style="font:15px system-ui;margin:18px 0;border-bottom:1px solid #9b865f;padding:10px">Guest name(s): __________________</div><div style="font-size:17px;margin:18px">5 DECEMBER 2026</div><div style="font:14px system-ui">Ngome Hall<br>Africa Sana, Mwenge<br>Dar es Salaam</div><div id="physicalQr" style="display:flex;justify-content:center;margin:18px"></div><div class="small">WEDDING INVITATION</div></div><div style="text-align:center"><button class="btn" onclick="window.print()">Print common card</button></div>`;
+new QRCode($('physicalQr'),{text:url,width:150,height:150})
+}
+
+async function previewElectronic(){
+const id=$('electronicSelect').value;
+if(!id)return;
+const {data:inv}=await sb.from('invitations').select('invitation_code,invitees(full_name)').eq('id',id).single();
+if(!inv)return;
+const url=location.origin+location.pathname+'?invite='+encodeURIComponent(inv.invitation_code);
+const names=inv.invitees.map(x=>x.full_name).join(' & ');
+$('electronicCard').innerHTML=`<div class="invite"><div class="small">TOGETHER WITH THEIR FAMILIES</div><div style="font-size:13px;margin-top:20px">JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF</div><div class="names">Alfred F. Mhina<br>&<br>Theresia P. Marcel</div><div style="font:16px system-ui;font-weight:700">${escapeHtml(names)}</div><div style="font-size:17px;margin:18px">5 DECEMBER 2026</div><div style="font:14px system-ui">Ngome Hall<br>Africa Sana, Mwenge<br>Dar es Salaam</div><div id="electronicQr"></div><div class="small">YOUR INVITATION · PLEASE PRESENT AT THE ENTRANCE</div></div><div style="text-align:center"><button class="btn" onclick="window.print()">Print / Save card</button></div>`;
+new QRCode($('electronicQr'),{text:url,width:150,height:150})
+}
 
 // Always show staff sign-in first. Supabase restores an existing staff session automatically.
 (async function boot(){
-  $('setup').classList.add('hidden');
-  $('auth').classList.remove('hidden');
-  try {
-    const {data,error}=await sb.auth.getSession();
-    if(error){say('authMsg','Could not restore sign-in session. Please sign in again.');return}
-    if(data.session) await initApp();
-  } catch(e) {
-    say('authMsg','Connection problem. Check your internet connection and reload this page.');
-  }
+$('setup').classList.add('hidden');
+$('auth').classList.remove('hidden');
+try{
+const {data,error}=await sb.auth.getSession();
+if(error){say('authMsg','Could not restore sign-in session. Please sign in again.');return}
+if(data.session)await initApp()
+}catch(e){
+say('authMsg','Connection problem. Check your internet connection and reload this page.')
+}
 })();
-</script></body></html>
+
+// Register the service worker for PWA installation and offline app-shell support.
+if('serviceWorker' in navigator){
+window.addEventListener('load',()=>{
+navigator.serviceWorker.register('/sw.js')
+.catch(err=>console.warn('App offline support unavailable:',err));
+});
+}
+</script>
+</body>
+</html>
